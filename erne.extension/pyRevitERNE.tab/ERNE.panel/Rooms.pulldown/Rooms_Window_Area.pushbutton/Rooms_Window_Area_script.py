@@ -3,6 +3,7 @@ Writes sum of window area of appropriate windows into
 room parameter Fensterflaeche, except for explicitly
 excluded windows by parameter Fensterflaeche_Exklusion
 """
+from Autodesk.Revit.DB import BuiltInParameter as Bip
 from Autodesk.Revit.DB import BuiltInCategory as Bic
 from Autodesk.Revit.DB import FilteredElementCollector as Fec
 from Autodesk.Revit.DB import ElementId
@@ -13,8 +14,10 @@ from rph import param
 
 
 def get_window_area(window):
-    height = window.Symbol.LookupParameter("Height").AsDouble()
-    width  = window.Symbol.LookupParameter("Width" ).AsDouble()
+    # height = window.Symbol.LookupParameter("Height").AsDouble()
+    height = window.get_Parameter(Bip.CASEWORK_HEIGHT).AsDouble()
+    # width  = window.Symbol.LookupParameter("Width" ).AsDouble()
+    width  = window.get_Parameter(Bip.CASEWORK_WIDTH).AsDouble()
     print(window.Name, height * FT_M, width * FT_M)
     return height * width
 
@@ -26,6 +29,8 @@ stopwatch.Start()
 window_area_param_name = "Window_area"
 # ::_Required_SP_:: T:YesNo; TI:Instance; G:Data; C:Windows; SPG:WINDOWS
 exclude_param_name     = "Window_area_exclusion"
+# ::_Required_SP_:: T:Area; TI:Instance; G:Data; C:Rooms; SPG:ROOMS
+area_ratio_param_name  = "Ratio_Room_area_Window_area"
 
 use = "ToRoom" #  "FromRoom"
 
