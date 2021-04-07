@@ -14,10 +14,8 @@ from rph import param
 
 
 def get_window_area(window):
-    # height = window.Symbol.LookupParameter("Height").AsDouble()
-    height = window.get_Parameter(Bip.CASEWORK_HEIGHT).AsDouble()
-    # width  = window.Symbol.LookupParameter("Width" ).AsDouble()
-    width  = window.get_Parameter(Bip.CASEWORK_WIDTH).AsDouble()
+    height = window.Symbol.get_Parameter(Bip.CASEWORK_HEIGHT).AsDouble()
+    width  = window.Symbol.get_Parameter(Bip.CASEWORK_WIDTH).AsDouble()
     print(window.Name, height * FT_M, width * FT_M)
     return height * width
 
@@ -29,7 +27,9 @@ stopwatch.Start()
 window_area_param_name = "Window_area"
 # ::_Required_SP_:: T:YesNo; TI:Instance; G:Data; C:Windows; SPG:WINDOWS
 exclude_param_name     = "Window_area_exclusion"
-# ::_Required_SP_:: T:Area; TI:Instance; G:Data; C:Rooms; SPG:ROOMS
+# ::_Required_SP_:: T:Text; TI:Instance; G:Data; C:Rooms; SPG:GENERAL
+room_rvt_id_param_name  = "Revit_Id"
+# ::_Required_SP_:: T:Number; TI:Instance; G:Data; C:Rooms; SPG:ROOMS
 area_ratio_param_name  = "Ratio_Room_area_Window_area"
 
 use = "ToRoom" #  "FromRoom"
@@ -62,12 +62,13 @@ with db.Transaction("window area per room"):
     for room_id, area in window_area_by_room.items():
         room = doc.GetElement(ElementId(room_id))
         room_name = param.get_val(room, "Name")
+        room_area = room.Area
         print("________\nroom: {} - {}".format(room_id, room_name))
-        print(area)
         print(room, area * SQFT_SQMT)
+        param.set_val(room, room_rvt_id_param_name, str(room_id))
         param.set_val(room, window_area_param_name, area)
+        param.set_val(room, area_ratio_param_name, area / room_area)
 
 print("{} updated in: ".format(__file__))
-
 stopwatch.Stop()
 print(stopwatch.Elapsed)
