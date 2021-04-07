@@ -63,6 +63,7 @@ with db.Transaction("window area per room"):
         room = doc.GetElement(ElementId(room_id))
         room_name = param.get_val(room, "Name")
         print("________\nroom: {} - {}".format(room_id, room_name))
+        print(area)
         print(room, area * SQFT_SQMT)
         param.set_val(room, window_area_param_name, area)
 
