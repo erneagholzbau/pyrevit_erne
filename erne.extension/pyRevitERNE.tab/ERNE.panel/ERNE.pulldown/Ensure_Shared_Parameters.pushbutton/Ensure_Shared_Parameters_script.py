@@ -67,6 +67,9 @@ def allow_text_params_vary_on_group():
 def get_sp_dir():
     prefices = ["01", "18", "01_", "01_", "Re", "Ak"]
     search_dir = "J:"
+    if not os.path.exists(search_dir):
+        print("Could not find J: as mapped Drive")
+        return
     for prefix in prefices:
         for node in os.listdir(search_dir):
             if node.startswith(prefix):
@@ -100,7 +103,8 @@ BIND_METHODS = {
 
 spf = doc.Application.OpenSharedParameterFile()
 #print(spf.Filename)
-SP_PATH_DEFINED = os.path.join(get_sp_dir(), "ERNE_shared_parameters.txt")
+SP_DIR = get_sp_dir()
+SP_PATH_DEFINED = os.path.join(SP_DIR, "ERNE_shared_parameters.txt")
 
 if not spf:
     doc.Application.SharedParametersFilename = SP_PATH_DEFINED
@@ -114,8 +118,8 @@ spf = doc.Application.OpenSharedParameterFile()
 
 # ensure pyRevit shared params from json are in shared param file
 
-js_path = os.path.join(get_sp_dir(), "ERNE_pyRevit_required_shared_parameters.json")
-with open(js_path) as js_file:
+JS_PATH = os.path.join(SP_DIR, "ERNE_pyRevit_required_shared_parameters.json")
+with open(JS_PATH) as js_file:
     json_spf_groups = json.load(js_file)
 
 
