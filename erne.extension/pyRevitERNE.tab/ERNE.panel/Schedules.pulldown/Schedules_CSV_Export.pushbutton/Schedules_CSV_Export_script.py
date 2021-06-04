@@ -2,6 +2,7 @@
 import clr
 clr.AddReference("RevitAPI")
 from Autodesk.Revit.DB import ViewScheduleExportOptions, ExportTextQualifier, ExportColumnHeaders
+from System.Diagnostics import Stopwatch
 from rpw.ui.forms import select_folder
 from rpw import doc, uidoc
 import datetime
@@ -39,6 +40,9 @@ export_modes = {
     "formatted": get_sched_formatted_options(),
 }
 
+stopwatch = Stopwatch()
+stopwatch.Start()
+
 selection = [doc.GetElement(elId) for elId in uidoc.Selection.GetElementIds()]
 today_date = str(datetime.datetime.now().date()).replace("-","")
 
@@ -55,3 +59,7 @@ for view in selection:
             "{}_{}_{}.csv".format(today_date, sched_name, mode),
             sched_opt,
         )
+
+stopwatch.Stop()
+print("{} exported in: ".format(__file__))
+print(stopwatch.Elapsed)
