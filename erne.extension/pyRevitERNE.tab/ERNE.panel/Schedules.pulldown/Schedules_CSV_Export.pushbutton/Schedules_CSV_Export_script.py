@@ -1,4 +1,8 @@
 # -*- coding: cp1252 -*-
+"""
+Exports all selected schedules in Project browser as
+csv tables both in raw and formatted mode
+"""
 import clr
 clr.AddReference("RevitAPI")
 from Autodesk.Revit.DB import ViewScheduleExportOptions, ExportTextQualifier, ExportColumnHeaders
