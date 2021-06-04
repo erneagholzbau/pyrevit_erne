@@ -169,6 +169,15 @@ Square meters of selected rooms
 ## Model
 
 
+### Adapto1Day_ifc2rvt
+
+Prepares a Adapto1Day model
+opened IFC from rh2bb2rvt for use in rvt.
+Merges doubled walls, replaces doors,
+replaces and flips windows,
+joins floors and walls, creates rooms.
+
+
 ### Create_Free_Form_Element
 
 Converts selected ACIS solid in family into
@@ -236,11 +245,34 @@ excluded windows by parameter Fensterflaeche_Exklusion
 `Type_Instance: Instance` <br>
 `Type_of_parameter: YesNo` <br>
 
+` Name: Revit_Id` <br>
+`Categories: Rooms` <br>
+`Group_parameter_under: Data` <br>
+`Shared_Parameter_Group: GENERAL` <br>
+`Type_Instance: Instance` <br>
+`Type_of_parameter: Text` <br>
+
+` Name: Ratio_Room_area_Window_area` <br>
+`Categories: Rooms` <br>
+`Group_parameter_under: Data` <br>
+`Shared_Parameter_Group: ROOMS` <br>
+`Type_Instance: Instance` <br>
+`Type_of_parameter: Number` <br>
+
 
 ### Tag_Rooms_In_Views
 
 Creates a tag for each selected room or all rooms in view or all rooms in all selected views.
 Tag type is chosen in dialog.
+
+
+## Schedules
+
+
+### Schedules_CSV_Export
+
+Exports all selected schedules in Project browser as
+csv tables both in raw and formatted mode
 
 
 ## Sheets
