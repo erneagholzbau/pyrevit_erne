@@ -66,7 +66,7 @@ def allow_text_params_vary_on_group():
 
 def get_sp_dir():
     prefices = ["01", "18", "01_", "01_", "Re", "Ak"]
-    search_dir = "J:"
+    search_dir = "\\\\ernesrv105\\DatenMW"
     if not os.path.exists(search_dir):
         print("Could not find J: as mapped Drive")
         return
