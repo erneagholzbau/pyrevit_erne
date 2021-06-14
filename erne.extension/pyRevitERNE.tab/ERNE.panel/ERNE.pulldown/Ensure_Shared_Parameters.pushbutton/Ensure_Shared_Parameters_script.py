@@ -73,7 +73,7 @@ def get_sp_dir():
     for prefix in prefices:
         for node in os.listdir(search_dir):
             if node.startswith(prefix):
-                # print(node)
+                print(node)
                 search_dir = os.path.join(search_dir, node)
                 # print search_dir
                 break
