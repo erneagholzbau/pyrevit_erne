@@ -73,6 +73,16 @@ Ensures all shared parameters for pyRevit ERNE scripts are
 available in current model - created if necessary
 
 
+###### required parameters:
+
+` Name: db_project_name` <br>
+`Categories: ProjectInfo` <br>
+`Group_parameter_under: Data` <br>
+`Shared_Parameter_Group: GENERAL` <br>
+`Type_Instance: Instance` <br>
+`Type_of_parameter: Text` <br>
+
+
 ### reload
 
 Reload pyRevit into new session.
