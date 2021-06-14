@@ -116,6 +116,11 @@ elif spf.Filename != SP_PATH_DEFINED:
 spf = doc.Application.OpenSharedParameterFile()
 
 
+### collect unshared params:
+
+# ::_Required_SP_:: T:Text; TI:Instance; G:Data; C:ProjectInfo; SPG:GENERAL
+db_project_name_param_name = "db_project_name"
+
 # ensure pyRevit shared params from json are in shared param file
 
 JS_PATH = os.path.join(SP_DIR, "ERNE_pyRevit_required_shared_parameters.json")
