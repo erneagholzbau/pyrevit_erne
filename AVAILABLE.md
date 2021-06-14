@@ -76,7 +76,7 @@ available in current model - created if necessary
 ###### required parameters:
 
 ` Name: db_project_name` <br>
-`Categories: ProjectInfo` <br>
+`Categories: ProjectInformation` <br>
 `Group_parameter_under: Data` <br>
 `Shared_Parameter_Group: GENERAL` <br>
 `Type_Instance: Instance` <br>
