@@ -138,6 +138,7 @@ bip_map = {
     "comments"            : Bip.ALL_MODEL_INSTANCE_COMMENTS,
     "sill_height"         : Bip.INSTANCE_SILL_HEIGHT_PARAM,
     "level_compute_height": Bip.LEVEL_ROOM_COMPUTATION_HEIGHT,
+    "department"          : Bip.ROOM_DEPARTMENT,
     "room_floor_finish"   : Bip.ROOM_FINISH_FLOOR,
     "room_wall_finish"    : Bip.ROOM_FINISH_WALL,
     "room_ceiling_finish" : Bip.ROOM_FINISH_CEILING,
