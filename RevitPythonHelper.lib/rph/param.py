@@ -134,17 +134,20 @@ dtype_empty = {
     DB.StorageType.ElementId: DB.ElementId(-1),
 }
 bip_map = {
-    "type_name"           : Bip.ALL_MODEL_TYPE_NAME,
-    "comments"            : Bip.ALL_MODEL_INSTANCE_COMMENTS,
-    "sill_height"         : Bip.INSTANCE_SILL_HEIGHT_PARAM,
-    "level_compute_height": Bip.LEVEL_ROOM_COMPUTATION_HEIGHT,
-    "department"          : Bip.ROOM_DEPARTMENT,
-    "room_floor_finish"   : Bip.ROOM_FINISH_FLOOR,
-    "room_wall_finish"    : Bip.ROOM_FINISH_WALL,
-    "room_ceiling_finish" : Bip.ROOM_FINISH_CEILING,
-    "wall_height"         : Bip.WALL_USER_HEIGHT_PARAM,
-    "wall_width"          : Bip.WALL_ATTR_WIDTH_PARAM,
-    "wall_thickness"      : Bip.WALL_ATTR_WIDTH_PARAM,
+    "type_name"              : Bip.ALL_MODEL_TYPE_NAME,
+    "comments"               : Bip.ALL_MODEL_INSTANCE_COMMENTS,
+    "sill_height"            : Bip.INSTANCE_SILL_HEIGHT_PARAM,
+    "level_compute_height"   : Bip.LEVEL_ROOM_COMPUTATION_HEIGHT,
+    "department"             : Bip.ROOM_DEPARTMENT,
+    "project_number"         : Bip.PROJECT_NUMBER,
+    "room_floor_finish"      : Bip.ROOM_FINISH_FLOOR,
+    "room_wall_finish"       : Bip.ROOM_FINISH_WALL,
+    "room_ceiling_finish"    : Bip.ROOM_FINISH_CEILING,
+    "sheet_issue_date"       : Bip.SHEET_ISSUE_DATE,
+    "sheet_current_revision" : Bip.SHEET_CURRENT_REVISION,
+    "wall_height"            : Bip.WALL_USER_HEIGHT_PARAM,
+    "wall_width"             : Bip.WALL_ATTR_WIDTH_PARAM,
+    "wall_thickness"         : Bip.WALL_ATTR_WIDTH_PARAM,
 }
 
 ParamInfo = namedtuple("ParamInfo", "type_param name value dtype has_value shared read_only param")
