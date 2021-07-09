@@ -82,6 +82,20 @@ available in current model - created if necessary
 `Type_Instance: Instance` <br>
 `Type_of_parameter: Text` <br>
 
+` Name: Planart` <br>
+`Categories: Sheets` <br>
+`Group_parameter_under: Data` <br>
+`Shared_Parameter_Group: VIEWS` <br>
+`Type_Instance: Instance` <br>
+`Type_of_parameter: Text` <br>
+
+` Name: Planinfo` <br>
+`Categories: Sheets` <br>
+`Group_parameter_under: Data` <br>
+`Shared_Parameter_Group: VIEWS` <br>
+`Type_Instance: Instance` <br>
+`Type_of_parameter: Text` <br>
+
 
 ### reload
 
@@ -293,6 +307,36 @@ csv tables both in raw and formatted mode
 Your active Sheet View with placed views will be duplicated.
 If multiple sheets are selected in project browser, all of those get duplicated.
 If view with name collision exist, this will not work - please clean them up first
+
+
+### Set_Sheet_Data
+
+Collects sheet data into parameter "Projektname Zusatz 1" in pattern:
+"{Planausgabedatum}_{Phase?}_{Projektnummer}_{Planart}_{Plannummer}_{Planinfo}_{Index}"
+
+
+###### required parameters:
+
+` Name: Projektname Zusatz 1` <br>
+`Categories: Sheets` <br>
+`Group_parameter_under: Data` <br>
+`Shared_Parameter_Group: VIEWS` <br>
+`Type_Instance: Instance` <br>
+`Type_of_parameter: Text` <br>
+
+` Name: Planart` <br>
+`Categories: Sheets` <br>
+`Group_parameter_under: Data` <br>
+`Shared_Parameter_Group: VIEWS` <br>
+`Type_Instance: Instance` <br>
+`Type_of_parameter: Text` <br>
+
+` Name: Planinfo` <br>
+`Categories: Sheets` <br>
+`Group_parameter_under: Data` <br>
+`Shared_Parameter_Group: VIEWS` <br>
+`Type_Instance: Instance` <br>
+`Type_of_parameter: Text` <br>
 
 
 ## Walls
