@@ -243,6 +243,27 @@ FloorType is selected from room parameter "Floor Finish" or first FloorType.
 Lists elements joined to selected element
 
 
+### Redraw_MIP_Windows
+
+Redraws all model-in-place windows with windows of scripted window family
+
+
+### Void_Cutter
+
+Select a nested RVT link. The script will search through this linked model.
+It will create accordingly sized void instances, based on the bounding box size of
+found "WD - RECH" generic models in that link, and will mirror a set of parameters.
+The Voids are set to the closest "Building Story" level.
+It will cut intersecting walls, floors, roofs and structural framings of predefined
+types (see white lists and black lists) with these voids.
+Furthermore will it check existing voids if they need to be recut, based on current
+conditions in the model.
+Rotation of void is currently not yet implemented!!
+prerequisite: GEN_Void_Box.rfa
+source: GEN_Void_Box.rfa
+source updated 20210907
+
+
 ## Rooms
 
 
