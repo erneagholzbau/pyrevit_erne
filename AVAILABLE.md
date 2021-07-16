@@ -359,6 +359,13 @@ Collects sheet data into parameter "Projektname Zusatz 1" in pattern:
 `Type_Instance: Instance` <br>
 `Type_of_parameter: Text` <br>
 
+` Name: Projekt_Phase` <br>
+`Categories: ProjectInformation` <br>
+`Group_parameter_under: Data` <br>
+`Shared_Parameter_Group: GENERAL` <br>
+`Type_Instance: Instance` <br>
+`Type_of_parameter: Text` <br>
+
 
 ## Walls
 
